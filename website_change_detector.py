@@ -1,3 +1,8 @@
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 import requests
 from bs4 import BeautifulSoup
 import hashlib
@@ -17,7 +22,7 @@ HASH_FILE = "website_hashes.txt"
 
 # Email configuration
 EMAIL_SENDER = "vanshcgindia@gmail.com"  # Replace with your email
-EMAIL_PASSWORD = "errq yrwv mkfa dpwt"  # Replace with your app-specific password
+EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 EMAIL_RECEIVER = "vanshcgindia@gmail.com"  # Replace with your email
 
 # Log file configuration
